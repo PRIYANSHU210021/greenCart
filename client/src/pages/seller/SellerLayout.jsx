@@ -35,10 +35,10 @@ const SellerLayout = () => {
                 <div className="flex items-center justify-between px-4 md:px-8 border-b border-gray-300 py-3 bg-white transition-all duration-300">
                     <a href="/">
                         {/* <img className="h-9" src="" alt="dummyLogoColored" />  */}
-                        <h1>SHYAM ARTS</h1>
+                        <h1>KANHA GROCERY</h1>
                     </a>
                     <div className="flex items-center gap-5 text-gray-500">
-                        <p>Hi! Shyam</p>
+                        <p>Hi! Kanha</p>
                         <button onClick={logout} className='border rounded-full text-sm px-4 py-1 cursor-pointer'>Logout</button>
                     </div>
                 </div>
