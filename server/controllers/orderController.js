@@ -140,9 +140,11 @@ export const placeOrderStripe = async (req, res) => {
             items,
             amount: totalAmount / 100, // Store in rupees
             address,
-            paymentType: "Online",
+            paymentType:"Online",
         });
 
+        //stripe gateway initialize
+        const stripeInstance = new stripe(process.env.STRIPE_SECRET_KEY);
 
         const line_items = productData.map((item) => {
             // Calculate per-item total with tax in paise
@@ -205,7 +207,7 @@ export const stripeWebhooks = async (request, response) => {
 
             //getting session metadata;
             const session = await stripeInstance.checkout.sessions.list({
-                payment_intent: paymentInterId,
+                payment_intent: paymentIntentId,
             })
 
             const { orderId, userId } = session.data[0].metadata;
@@ -225,7 +227,7 @@ export const stripeWebhooks = async (request, response) => {
 
             //getting session metadata;
             const session = await stripeInstance.checkout.sessions.list({
-                payment_intent: paymentInterId,
+                payment_intent: paymentIntentId,
             })
 
             const { orderId } = session.data[0].metadata;
@@ -233,10 +235,10 @@ export const stripeWebhooks = async (request, response) => {
             break;
         }
         default:
-            console.error(`Unhandled Event Type $(event.type)`);
+            console.error(`Unhandled Event Type ${event.type}`);
             break;
     }
-    response.json({received:true});
+    response.json({ received: true });
 }
 
 

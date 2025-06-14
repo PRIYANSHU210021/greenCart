@@ -70,10 +70,9 @@ const Cart = () => {
                     address: selectedAddress._id,
                     amount: Math.round((getCartAmount() + getCartAmount() * 0.02) * 100) // Convert to cents
                 })
-                console.log("data", data);
+                // console.log("data", data);
                 if(data.success){
                     window.location.replace(data.url)
-                    console.log("problem1")
                 }else{
                     toast.error(data.message)
                 }

@@ -13,6 +13,7 @@ const MyOrders = () => {
         try {
             const { data } = await axios.get('/api/order/user')
             console.log(data.success)
+            console.log(data)
             if (data.success) {
                 setMyOrders(data.orders)
             }
