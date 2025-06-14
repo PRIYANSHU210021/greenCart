@@ -55,6 +55,10 @@ const Navbar = () => {
                     <img src={assets.nav_cart_icon} alt="cart" className='w-6 opacity-80' />
                     <button className="absolute -top-2 -right-3 text-xs text-white bg-primary w-[18px] h-[18px] rounded-full">{getCartCount()}</button>
                 </div>
+                <div onClick={() => navigate('/seller')} className="relative cursor-pointer">
+                    {/* <img src={assets.nav_cart_icon} alt="cart" className='w-6 opacity-80' /> */}
+                    <button className="text-xs text-black border-1 cursor-pointer py-1 px-3 rounded-xl ">Seller</button>
+                </div>
 
                 {!user ? (<button onClick={() => setShowUserLogin(true)} className="cursor-pointer px-8 py-2 bg-primary hover:bg-primary-dull transition text-white rounded-full">
                     Login
