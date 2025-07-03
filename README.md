@@ -37,4 +37,4 @@ Make sure you have the following installed on your local machine:
 1. Clone the repository to your local machine:
 
    ```bash
-   git clone https://github.com/priyanshu210021/greencart-grocery.git
+   git clone https://github.com/PRIYANSHU210021/greenCart.git
